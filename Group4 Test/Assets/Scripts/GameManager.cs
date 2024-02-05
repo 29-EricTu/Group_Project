@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public Rigidbody2D rb;
     public float MovementSeed;
 
-
     // Start is called before the first frame update
     void Start()
     {

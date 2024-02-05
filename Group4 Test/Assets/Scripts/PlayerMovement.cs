@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float Magazine = 0;
     public GameObject BulletPrefab;
     public GameObject BulletSpawn;
-    public bool FacingRight = true;
+    public bool FacingRight = false;
 
     Animator Yes;
     public GameManager GM;
