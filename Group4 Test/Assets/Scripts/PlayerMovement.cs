@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GM.MoveLeft();
             this.GetComponent<SpriteRenderer>().flipX = true;
+
             Yes.SetBool("IsRunBool", true);
             FacingRight = false;
         }
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             Yes.SetBool("IsShootBool", false);
-            GM.MovementSeed = 2;
+            GM.MovementSeed = 4;
         }
     }
 }
