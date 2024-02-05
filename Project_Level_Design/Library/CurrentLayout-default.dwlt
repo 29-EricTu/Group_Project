@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 350
+  controlID: 125
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 41
+  controlID: 86
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 42
+  controlID: 61
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,8 +395,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: fc380000
+      m_LastClickedID: 14588
       m_ExpandedIDs: 5efbffff0e390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.570814, y: -0.065082476, z: -23.326237}
+    m_Target: {x: -4.8169146, y: -5.7373967, z: -40.32565}
     speed: 2
-    m_Value: {x: 6.335357, y: -0.09274346, z: -23.276117}
+    m_Value: {x: -4.5922723, y: -5.7436523, z: -40.305824}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -509,9 +509,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.283585
+    m_Target: 4.6020236
     speed: 2
-    m_Value: 13.9095125
+    m_Value: 4.4038506
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -601,20 +601,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sidescroller Shooter - Central City/Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sidescroller Shooter - Central City/Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Eric Tu\Documents\GitHub\Group_Project\Project_Level_Design
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 943e0000
-    m_LastClickedID: 16020
-    m_ExpandedIDs: 00000000943e0000a43e0000a63e0000a83e000000ca9a3b
+    m_SelectedIDs: 5a3e0000
+    m_LastClickedID: 15962
+    m_ExpandedIDs: 000000003c3e0000503e00005a3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +642,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000943e0000
+    m_ExpandedIDs: 000000003c3e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -753,7 +753,7 @@ MonoBehaviour:
     m_CachedPref: 50
     m_ControlHash: 1964396721
     m_PrefName: Preview_TilemapBrushInspector
-  m_Palette: {fileID: 9042402902403236117, guid: c5650b1236ebd8945b126a14f8ac5bc4,
+  m_Palette: {fileID: 3460938038461061049, guid: 483cf10f62e4f12448411887056de165,
     type: 3}
 --- !u!114 &19
 MonoBehaviour:
