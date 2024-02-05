@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullets
   - Enemies
+  - Magazine
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float bulletCount = 7;
+    public float Magazine = 0;
     public GameObject BulletPrefab;
     public GameObject BulletSpawn;
     public bool FacingRight = true;
@@ -39,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Yes.SetBool("IsRunBool", false);
         }
+
         if (bulletCount > 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))
