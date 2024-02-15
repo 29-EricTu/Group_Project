@@ -173,6 +173,12 @@ public class ShadowEnemyScript : MonoBehaviour
                 CurrentPoint = pointA.transform;
             }
         }
+        if(collision.gameObject.tag=="Bullets")
+        {
+            Ania.SetTrigger("Enemy_Die");
+            Destroy(gameObject, 1);
+            MoveSpeed = 0;
+        }
     }
 }
 

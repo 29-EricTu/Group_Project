@@ -62,4 +62,16 @@ public class PlayerMovement : MonoBehaviour
             GM.MovementSeed = 4;
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == ("Enemies"))
+        {
+            Yes.SetTrigger("IsDeathTrigger");
+            GM.MovementSeed = 0;
+        }
+    }
+    public void ChangeScene()
+    {
+        GM.Loser();
+    }
 }
