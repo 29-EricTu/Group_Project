@@ -32,9 +32,6 @@ public class ShadowEnemyScript : MonoBehaviour
     // enemy damage
     public int damage;
 
-    // enemy's Health
-    public int Health;
-
     // parameters for when the enemy can attack
     private bool canDamage = true;
     public float damageRate;
@@ -55,17 +52,15 @@ public class ShadowEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         // find the distance of the player to the enemy
-
         distanceToPlayer = Vector2.Distance(Player.transform.position, transform.position);
 
-        if (Health > 0)
-        {
             // when the player is within the range of the enemy's argo
             if (distanceToPlayer < contactDistance)
             {
+                // activate the run animation
+                Ania.SetBool("Player_Spotted", true);
+                Ania.SetBool("Enemy_Walk", false);
                 // flips and move to the left
                 if (Player.transform.position.x < transform.position.x)
                 {
@@ -78,10 +73,6 @@ public class ShadowEnemyScript : MonoBehaviour
                     RB2D.velocity = new Vector2(MoveSpeed, 0);
                     RSprite.flipX = false;
                 }
-
-                // activate the run animation
-                Ania.SetBool("Player_Spotted", true);
-                Ania.SetBool("Enemy_Walk", false);
                 // when the player is in attack range
                 if (distanceToPlayer < Attackdistance)
                 {
@@ -101,28 +92,22 @@ public class ShadowEnemyScript : MonoBehaviour
                 RB2D.velocity = new Vector2(0, 0);
                 Ania.SetBool("Player_Spotted", false);
                 Ania.SetBool("Enemy_Walk", false);
-
-                if (CurrentPoint.position.x < transform.position.x && CanMove == true)
+                if (CanMove == true)
                 {
                     Ania.SetBool("Enemy_Walk", true);
+                    if (CurrentPoint.position.x < transform.position.x)
+                    {
                     RB2D.velocity = new Vector2(-MoveSpeed, 0);
                     RSprite.flipX = true;
-                }
-                else if (CurrentPoint.position.x > transform.position.x && CanMove == true)
-                {
-                    Ania.SetBool("Enemy_Walk", true);
+                    }
+
+                    else
+                    {
                     RB2D.velocity = new Vector2(MoveSpeed, 0);
                     RSprite.flipX = false;
+                    }
                 }
             }
-        }
-
-        // when the health = 0
-        if (Health <= 0)
-        {
-            RB2D.velocity = new Vector2(0f, 0f);
-            StartCoroutine(Dead(0.3f));
-        }
     }
 
     // when the player can attack
@@ -133,16 +118,6 @@ public class ShadowEnemyScript : MonoBehaviour
         //wait for some time
         yield return new WaitForSeconds(damageRate);
         canDamage = true;
-    }
-
-    // when the dies
-    private IEnumerator Dead(float despawn)
-    {
-        Ania.SetBool("Enemy_Die", true);
-        //wait for some time
-        yield return new WaitForSeconds(despawn);
-
-        Destroy(gameObject);
     }
 
     private IEnumerator Patrolling(float waitingTime)
