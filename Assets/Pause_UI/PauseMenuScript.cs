@@ -39,14 +39,10 @@ public class PauseMenuScript : MonoBehaviour
         }
     }
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(" ");
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void ResumeGame()
@@ -58,9 +54,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public void RestartLevel()
     {
-        Scene CurrentScene = SceneManager.GetActiveScene();
 
-        SceneManager.LoadScene(CurrentScene.name);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()
