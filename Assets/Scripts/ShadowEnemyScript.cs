@@ -40,6 +40,8 @@ public class ShadowEnemyScript : MonoBehaviour
     //gets the rigidbody
     public Rigidbody2D RB2D;
 
+    public float EnemyHP = 3;
+
     //public Text ScoreText;//
     //public float Score;//
     // Start is called before the first frame update
@@ -112,6 +114,13 @@ public class ShadowEnemyScript : MonoBehaviour
                     }
                 }
             }
+            if (EnemyHP <=0)
+        {
+            Ania.SetTrigger("Enemy_Die");
+            Destroy(gameObject, 1);
+            //Score++;//
+            MoveSpeed = 0;
+        }
     }
 
     // when the player can attack
@@ -154,10 +163,7 @@ public class ShadowEnemyScript : MonoBehaviour
         }
         if(collision.gameObject.tag=="Bullets")
         {
-            Ania.SetTrigger("Enemy_Die");
-            Destroy(gameObject, 1);
-           //Score++;//
-            MoveSpeed = 0;
+            EnemyHP--;
         }
     }
 }

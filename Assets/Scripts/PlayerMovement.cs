@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
                 bulletCount--;
                 Yes.SetBool("IsShootBool", true);
                 GM.MovementSeed = 0;
+                GM.Pew();
             }
         }
         if (Input.GetKeyDown(KeyCode.R))
@@ -75,18 +76,20 @@ public class PlayerMovement : MonoBehaviour
         {
             Yes.SetTrigger("IsDeathTrigger");
             GM.MovementSeed = 0;
+            GM.Ow();
         }
         if (collision.gameObject.tag == ("Goal"))
         {
             SceneManager.LoadScene("WinScene");
         }
     }
-    public void ChangeScene()
+    public void Die()
     {
         GM.Loser();
     }
     public void Cooldown()
     {
         canShoot = true;
+        //Yes.SetBool("IsShootBool", false);
     }
 }

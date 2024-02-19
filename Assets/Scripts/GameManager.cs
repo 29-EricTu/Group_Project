@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     public Rigidbody2D rb;
     public float MovementSeed;
 
+    public AudioClip[] PP;
+    public AudioSource Urmom;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Urmom=GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,5 +33,13 @@ public class GameManager : MonoBehaviour
     public void Loser()
     {
         SceneManager.LoadScene("GameLose");
+    }
+    public void Ow()
+    {
+        Urmom.PlayOneShot(PP[1]);
+    }
+    public void Pew()
+    {
+        Urmom.PlayOneShot(PP[0]);
     }
 }
