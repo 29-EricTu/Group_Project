@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Sprites;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ShadowEnemyScript : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class ShadowEnemyScript : MonoBehaviour
     //gets the rigidbody
     public Rigidbody2D RB2D;
 
+    //public Text ScoreText;//
+    //public float Score;//
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +55,7 @@ public class ShadowEnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ScoreText.text = ("Enemies Purified : ") + Score;//
         // find the distance of the player to the enemy
         distanceToPlayer = Vector2.Distance(Player.transform.position, transform.position);
 
@@ -152,6 +156,7 @@ public class ShadowEnemyScript : MonoBehaviour
         {
             Ania.SetTrigger("Enemy_Die");
             Destroy(gameObject, 1);
+           //Score++;//
             MoveSpeed = 0;
         }
     }

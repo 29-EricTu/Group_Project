@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject BulletPrefab;
     public GameObject BulletSpawn;
     public bool FacingRight = false;
+    public bool canShoot = true;
+
+    public Text MagazineText;
 
     Animator Yes;
     public GameManager GM;
@@ -22,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MagazineText.text = bulletCount + ("/7");
         if (Input.GetKey(KeyCode.D))
         {
             GM.MoveRight();
@@ -44,8 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (bulletCount > 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && canShoot)
             {
+                canShoot = false;
                 Instantiate(BulletPrefab, BulletSpawn.transform.position,Quaternion.identity);
                 bulletCount--;
                 Yes.SetBool("IsShootBool", true);
@@ -69,9 +76,17 @@ public class PlayerMovement : MonoBehaviour
             Yes.SetTrigger("IsDeathTrigger");
             GM.MovementSeed = 0;
         }
+        if (collision.gameObject.tag == ("Goal"))
+        {
+            SceneManager.LoadScene("WinScene");
+        }
     }
     public void ChangeScene()
     {
         GM.Loser();
+    }
+    public void Cooldown()
+    {
+        canShoot = true;
     }
 }
