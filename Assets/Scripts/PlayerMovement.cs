@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (bulletCount > 0)
         {
-            if (Input.GetKey(KeyCode.Space) && canShoot)
+            if (Input.GetKeyDown(KeyCode.Space) && canShoot)
             {
                 canShoot = false;
                 Instantiate(BulletPrefab, BulletSpawn.transform.position,Quaternion.identity);
@@ -66,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            Yes.SetBool("IsShootBool", false);
             GM.MovementSeed = 4;
         }
     }
@@ -90,6 +89,6 @@ public class PlayerMovement : MonoBehaviour
     public void Cooldown()
     {
         canShoot = true;
-        //Yes.SetBool("IsShootBool", false);
+        Yes.SetBool("IsShootBool", false);
     }
 }

@@ -42,7 +42,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void MainMenu()
     {
-        //Time.timeScale = 1;//
+        Time.timeScale = 1;
         SceneManager.LoadScene("MenuScene");
     }
 
@@ -55,7 +55,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void RestartLevel()
     {
-
+        Time.timeScale = 1;
         SceneManager.LoadScene("SampleScene");
     }
 
